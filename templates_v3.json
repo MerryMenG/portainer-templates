@@ -51,22 +51,22 @@
         {
           "name": "WATCHTOWER_ROLLING_RESTART",
           "label": "Rolling restart",
-          "default": true
+          "default": "true"
         },
         {
           "name": "WATCHTOWER_CLEANUP",
           "label": "Cleanup",
-          "default": true
+          "default": "true"
         },
         {
           "name": "WATCHTOWER_DEBUG",
           "label": "Debug",
-          "default": false
+          "default": "false"
         },
         {
           "name": "WATCHTOWER_INCLUDE_STOPPED",
           "label": "Include stopped",
-          "default": true
+          "default": "true"
         },
         {
           "name": "WATCHTOWER_POLL_INTERVAL",
@@ -76,7 +76,7 @@
         {
           "name": "WATCHTOWER_RUN_ONCE",
           "label": "Run once",
-          "default": false
+          "default": "false"
         }
       ]
     },
@@ -133,12 +133,12 @@
         {
           "name": "FULL_SYNC",
           "label": "Perform a full sync",
-          "default": true
+          "default": "true"
         },
         {
           "name": "RUN_GRAVITY",
           "label": "Run gravity after syncing",
-          "default": false
+          "default": "false"
         },
         {
           "name": "CRON",
@@ -153,82 +153,82 @@
         {
           "name": "CLIENT_SKIP_TLS_VERIFICATION",
           "label": "Skips TLS certificate verification",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_DNS",
           "label": "Synchronize DNS settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_DHCP",
           "label": "Synchronize DHCP settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_NTP",
           "label": "Synchronize NTP settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_RESOLVER",
           "label": "Synchronize resolver settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_DATABASE",
           "label": "Synchronize database settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_MISC",
           "label": "Synchronize miscellaneous settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_CONFIG_DEBUG",
           "label": "Synchronize debug settings",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_DHCP_LEASES",
           "label": "Synchronize DHCP leases",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_GROUP",
           "label": "Synchronize groups",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_AD_LIST",
           "label": "Synchronize ad lists",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_AD_LIST_BY_GROUP",
           "label": "Synchronize ad lists by group",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_DOMAIN_LIST",
           "label": "Synchronize domain lists",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_DOMAIN_LIST_BY_GROUP",
           "label": "Synchronize domain lists by group",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_CLIENT",
           "label": "Synchronize clients",
-          "default": false
+          "default": "false"
         },
         {
           "name": "SYNC_GRAVITY_CLIENT_BY_GROUP",
           "label": "Synchronize clients by group",
-          "default": false
+          "default": "false"
         }
       ]
     },
