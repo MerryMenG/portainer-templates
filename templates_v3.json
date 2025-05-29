@@ -71,7 +71,7 @@
         {
           "name": "WATCHTOWER_POLL_INTERVAL",
           "label": "Poll interval",
-          "default": 86400
+          "default": "86400"
         },
         {
           "name": "WATCHTOWER_RUN_ONCE",
