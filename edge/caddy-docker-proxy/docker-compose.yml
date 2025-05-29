@@ -1,0 +1,26 @@
+services:
+  # Caddy docker proxy info at https://github.com/lucaslorentz/caddy-docker-proxy/blob/master/README.md and https://caddyserver.com/docs/
+  caddy:
+    container_name: caddy
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    image: lucaslorentz/caddy-docker-proxy:ci-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp" # QUIC protocol support: https://www.chromium.org/quic/
+    environment:
+      - CADDY_INGRESS_NETWORKS=caddy
+    networks:
+      - caddy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - caddy_data:/data
+    restart: unless-stopped
+
+networks:
+  caddy:
+    driver: bridge
+
+volumes:
+  caddy_data: {}

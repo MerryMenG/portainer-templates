@@ -1,0 +1,264 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1,
+      "type": 1,
+      "name": "prometheus",
+      "title": "Prometheus",
+      "description": "Open source metrics and monitoring for your systems and services",
+      "logo": "https://prometheus.io/_next/static/media/prometheus-logo.7aa022e5.svg",
+      "image": "prom/prometheus:latest",
+      "categories": [
+        "Monitoring",
+        "Tools"
+      ],
+      "platform": "linux",
+      "ports": [
+        "9090/tcp"
+      ],
+      "command": "--config.file=/etc/prometheus/prometheus.yml",
+      "volumes": [
+        {
+          "container": "/etc/prometheus/prometheus.yml",
+          "bind": "/portainer/Files/AppData/Config/Prometheus/prometheus.yml"
+        },
+        {
+          "container": "/prometheus",
+          "bind": "/portainer/Files/AppData/Config/Prometheus/Prometheus"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": 3,
+      "name": "watchtower",
+      "title": "Watchtower",
+      "description": "A process for automating Docker container base image updates.",
+      "categories": ["Tools", "Edge"],
+      "platform": "linux",
+      "logo": "https://containrrr.dev/watchtower/images/logo-450px.png",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "edge/watchtower/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone",
+          "default": "Europe/London"
+        },
+        {
+          "name": "WATCHTOWER_ROLLING_RESTART",
+          "label": "Rolling restart",
+          "default": true
+        },
+        {
+          "name": "WATCHTOWER_CLEANUP",
+          "label": "Cleanup",
+          "default": true
+        },
+        {
+          "name": "WATCHTOWER_DEBUG",
+          "label": "Debug",
+          "default": false
+        },
+        {
+          "name": "WATCHTOWER_INCLUDE_STOPPED",
+          "label": "Include stopped",
+          "default": true
+        },
+        {
+          "name": "WATCHTOWER_POLL_INTERVAL",
+          "label": "Poll interval",
+          "default": 86400
+        },
+        {
+          "name": "WATCHTOWER_RUN_ONCE",
+          "label": "Run once",
+          "default": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": 3,
+      "name": "telemetry",
+      "title": "Telemetry",
+      "description": "Export hardware, OS and Docker metrics.",
+      "categories": ["Tools", "Edge", "Monitoring"],
+      "platform": "linux",
+      "logo": "https://img.freepik.com/premium-vector/performance-metrics-icon-vector-image-can-be-used-action-plan_120816-355524.jpg?w=2000",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "edge/telemetry/docker-compose.yml"
+      }
+    },
+    {
+      "id": 4,
+      "type": 3,
+      "name": "caddy-docker-proxy",
+      "title": "Caddy Docker Proxy",
+      "description": "Caddy as a reverse proxy for Docker",
+      "note": "https://github.com/lucaslorentz/caddy-docker-proxy",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/caddy.png",
+      "categories": ["Tools", "Web", "Webserver"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "edge/caddy-docker-proxy/docker-compose.yml"
+      }
+    },
+    {
+      "id": 5,
+      "type": 1,
+      "name": "nebula-sync",
+      "title": "Nebula Sync",
+      "description": "Synchronize configuration of multiple Pi-hole v6.x instances.",
+      "note": "https://github.com/lovelaze/nebula-sync",
+      "categories": ["Tools", "Other"],
+      "platform": "linux",
+      "image": "ghcr.io/lovelaze/nebula-sync:latest",
+      "env": [
+        {
+          "name": "PRIMARY",
+          "label": "Primary Pi-hole",
+          "default": "https://ph1.example.com|pasword"
+        },
+        {
+          "name": "REPLICAS",
+          "label": "Replica Pi-holes",
+          "default": "https://ph2.example.com|pasword,https://ph3.example.com|pasword"
+        },
+        {
+          "name": "FULL_SYNC",
+          "label": "Perform a full sync",
+          "default": true
+        },
+        {
+          "name": "RUN_GRAVITY",
+          "label": "Run gravity after syncing",
+          "default": false
+        },
+        {
+          "name": "CRON",
+          "label": "Cron schedule for synchronization",
+          "default": "*/15 * * * *"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for logs and cron",
+          "default": "Europe/London"
+        },
+        {
+          "name": "CLIENT_SKIP_TLS_VERIFICATION",
+          "label": "Skips TLS certificate verification",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_DNS",
+          "label": "Synchronize DNS settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_DHCP",
+          "label": "Synchronize DHCP settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_NTP",
+          "label": "Synchronize NTP settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_RESOLVER",
+          "label": "Synchronize resolver settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_DATABASE",
+          "label": "Synchronize database settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_MISC",
+          "label": "Synchronize miscellaneous settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_CONFIG_DEBUG",
+          "label": "Synchronize debug settings",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_DHCP_LEASES",
+          "label": "Synchronize DHCP leases",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_GROUP",
+          "label": "Synchronize groups",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_AD_LIST",
+          "label": "Synchronize ad lists",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_AD_LIST_BY_GROUP",
+          "label": "Synchronize ad lists by group",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_DOMAIN_LIST",
+          "label": "Synchronize domain lists",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_DOMAIN_LIST_BY_GROUP",
+          "label": "Synchronize domain lists by group",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_CLIENT",
+          "label": "Synchronize clients",
+          "default": false
+        },
+        {
+          "name": "SYNC_GRAVITY_CLIENT_BY_GROUP",
+          "label": "Synchronize clients by group",
+          "default": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": 3,
+      "name": "portainer-edge-agent",
+      "title": "Portainer Edge Agent",
+      "description": "The Portainer agent",
+      "note": "https://www.portainer.io/blog/portainer-agent-vs-edge-agent",
+      "logo": "https://www.portainer.io/hubfs/portainer-logo-black.svg",
+      "categories": ["Edge"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "edge/portainer-edge-agent/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "EDGE_ID",
+          "label": "Edge ID"
+        },
+        {
+          "name": "EDGE_KEY",
+          "label": "Edge Key"
+        }
+      ]
+    }
+  ]
+}
+
+
+
