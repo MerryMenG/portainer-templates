@@ -35,7 +35,7 @@
       "name": "watchtower",
       "title": "Watchtower",
       "description": "A process for automating Docker container base image updates.",
-      "categories": ["Tools", "Edge"],
+      "categories": ["Tools", "edge"],
       "platform": "linux",
       "logo": "https://containrrr.dev/watchtower/images/logo-450px.png",
       "repository": {
@@ -86,7 +86,7 @@
       "name": "telemetry",
       "title": "Telemetry",
       "description": "Export hardware, OS and Docker metrics.",
-      "categories": ["Tools", "Edge", "Monitoring"],
+      "categories": ["Tools", "edge", "Monitoring"],
       "platform": "linux",
       "logo": "https://img.freepik.com/premium-vector/performance-metrics-icon-vector-image-can-be-used-action-plan_120816-355524.jpg?w=2000",
       "repository": {
@@ -240,7 +240,7 @@
       "description": "The Portainer agent",
       "note": "https://www.portainer.io/blog/portainer-agent-vs-edge-agent",
       "logo": "https://www.portainer.io/hubfs/portainer-logo-black.svg",
-      "categories": ["Edge"],
+      "categories": ["edge"],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/MerryMenG/portainer-templates",
