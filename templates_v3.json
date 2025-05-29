@@ -178,7 +178,7 @@
         {
           "name": "REPLICAS",
           "label": "Replica Pi-holes",
-          "description": "https://ph2.example.com|pasword,https://ph3.example.com|pasword"
+          "description": "https://ph2.example.com|password,https://ph3.example.com|password"
         },
         {
           "name": "FULL_SYNC",
