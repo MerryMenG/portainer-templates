@@ -51,22 +51,62 @@
         {
           "name": "WATCHTOWER_ROLLING_RESTART",
           "label": "Rolling restart",
-          "default": "true"
+          "select": [
+            {
+              "text": "true",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "false",
+              "value": "false"
+            }
+          ]
         },
         {
           "name": "WATCHTOWER_CLEANUP",
           "label": "Cleanup",
-          "default": "true"
+          "select": [
+            {
+              "text": "true",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "false",
+              "value": "false"
+            }
+          ]
         },
         {
           "name": "WATCHTOWER_DEBUG",
           "label": "Debug",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "WATCHTOWER_INCLUDE_STOPPED",
           "label": "Include stopped",
-          "default": "true"
+          "select": [
+            {
+              "text": "true",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "false",
+              "value": "false"
+            }
+          ]
         },
         {
           "name": "WATCHTOWER_POLL_INTERVAL",
@@ -76,7 +116,17 @@
         {
           "name": "WATCHTOWER_RUN_ONCE",
           "label": "Run once",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         }
       ]
     },
@@ -123,22 +173,42 @@
         {
           "name": "PRIMARY",
           "label": "Primary Pi-hole",
-          "default": "https://ph1.example.com|pasword"
+          "description": "https://ph1.example.com|password"
         },
         {
           "name": "REPLICAS",
           "label": "Replica Pi-holes",
-          "default": "https://ph2.example.com|pasword,https://ph3.example.com|pasword"
+          "description": "https://ph2.example.com|pasword,https://ph3.example.com|pasword"
         },
         {
           "name": "FULL_SYNC",
           "label": "Perform a full sync",
-          "default": "true"
+          "select": [
+            {
+              "text": "true",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "false",
+              "value": "false"
+            }
+          ]
         },
         {
           "name": "RUN_GRAVITY",
           "label": "Run gravity after syncing",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "CRON",
@@ -153,82 +223,243 @@
         {
           "name": "CLIENT_SKIP_TLS_VERIFICATION",
           "label": "Skips TLS certificate verification",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_DNS",
           "label": "Synchronize DNS settings",
-          "default": "false"
+          "description": "Only valid if FULL_SYNC is false",
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_DHCP",
           "label": "Synchronize DHCP settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_NTP",
           "label": "Synchronize NTP settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_RESOLVER",
           "label": "Synchronize resolver settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_DATABASE",
           "label": "Synchronize database settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_MISC",
           "label": "Synchronize miscellaneous settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_CONFIG_DEBUG",
           "label": "Synchronize debug settings",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_DHCP_LEASES",
           "label": "Synchronize DHCP leases",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_GROUP",
           "label": "Synchronize groups",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_AD_LIST",
           "label": "Synchronize ad lists",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_AD_LIST_BY_GROUP",
           "label": "Synchronize ad lists by group",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_DOMAIN_LIST",
           "label": "Synchronize domain lists",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_DOMAIN_LIST_BY_GROUP",
           "label": "Synchronize domain lists by group",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_CLIENT",
           "label": "Synchronize clients",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         },
         {
           "name": "SYNC_GRAVITY_CLIENT_BY_GROUP",
           "label": "Synchronize clients by group",
-          "default": "false"
+          "select": [
+            {
+              "text": "true",
+              "value": "true"
+            },
+            {
+              "text": "false",
+              "value": "false",
+              "default": true
+            }
+          ]
         }
       ]
     },
