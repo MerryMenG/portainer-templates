@@ -2,6 +2,7 @@
   "version": "3",
   "templates": [
     {
+      "id": 8801,
       "type": 1,
       "name": "prometheus",
       "title": "Prometheus",
@@ -29,6 +30,7 @@
       ]
     },
     {
+      "id": 8802,
       "type": 3,
       "name": "watchtower",
       "title": "Watchtower",
@@ -129,6 +131,7 @@
       ]
     },
     {
+      "id": 8803,
       "type": 3,
       "name": "telemetry",
       "title": "Telemetry",
@@ -142,6 +145,7 @@
       }
     },
     {
+      "id": 8804,
       "type": 3,
       "name": "caddy-docker-proxy",
       "title": "Caddy Docker Proxy",
@@ -156,6 +160,7 @@
       }
     },
     {
+      "id": 8805,
       "type": 1,
       "name": "nebula-sync",
       "title": "Nebula Sync",
@@ -459,6 +464,7 @@
       ]
     },
     {
+      "id": 8806,
       "type": 3,
       "name": "portainer-edge-agent",
       "title": "Portainer Edge Agent",
