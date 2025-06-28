@@ -487,6 +487,45 @@
           "label": "Edge Key"
         }
       ]
+    },
+    {
+      "id": 8807,
+      "type": 3,
+      "name": "pterodactyl-wings",
+      "title": "Pterodactyl Wings (MMG)",
+      "description": "The server control plane for Pterodactyl Panel. Written from the ground-up with security, speed, and stability in mind.",
+      "note": "Make sure to create pterodactyl_nw network & set aliases if using database tunneling",
+      "categories": ["Docker", "Games"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "stacks/pterodactyl-wings/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone",
+          "default": "Europe/London"
+        },
+        {
+          "name": "WINGS_USERNAME",
+          "label": "Wings Username",
+          "default": "pterodactyl"
+        },
+        {
+          "name": "SQL_USERNAME",
+          "label": "SQL Username",
+          "default": "pterodactyl"
+        },
+        {
+          "name": "SQL_PASS",
+          "label": "SQL Password",
+        },
+        {
+          "name": "SQL_PASS_ROOT",
+          "label": "SQL Root Password",
+        },
+      ]
     }
   ]
 }
