@@ -519,12 +519,12 @@
         },
         {
           "name": "SQL_PASS",
-          "label": "SQL Password",
+          "label": "SQL Password"
         },
         {
           "name": "SQL_PASS_ROOT",
-          "label": "SQL Root Password",
-        },
+          "label": "SQL Root Password"
+        }
       ]
     }
   ]
