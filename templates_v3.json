@@ -40,7 +40,7 @@
       "logo": "https://containrrr.dev/watchtower/images/logo-450px.png",
       "repository": {
         "url": "https://github.com/MerryMenG/portainer-templates",
-        "stackfile": "edge/watchtower/docker-compose.yml"
+        "stackfile": "stacks/watchtower/docker-compose.yml"
       },
       "env": [
         {
@@ -141,7 +141,7 @@
       "logo": "https://img.freepik.com/premium-vector/performance-metrics-icon-vector-image-can-be-used-action-plan_120816-355524.jpg?w=2000",
       "repository": {
         "url": "https://github.com/MerryMenG/portainer-templates",
-        "stackfile": "edge/telemetry/docker-compose.yml"
+        "stackfile": "stacks/telemetry/docker-compose.yml"
       }
     },
     {
@@ -156,7 +156,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/MerryMenG/portainer-templates",
-        "stackfile": "edge/caddy-docker-proxy/docker-compose.yml"
+        "stackfile": "stacks/caddy-docker-proxy/docker-compose.yml"
       }
     },
     {
@@ -475,7 +475,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/MerryMenG/portainer-templates",
-        "stackfile": "edge/portainer-edge-agent/docker-compose.yml"
+        "stackfile": "stacks/portainer-edge-agent/docker-compose.yml"
       },
       "env": [
         {
