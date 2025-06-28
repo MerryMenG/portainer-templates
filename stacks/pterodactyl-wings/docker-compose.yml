@@ -1,0 +1,57 @@
+services:
+  wings:
+    image: ghcr.io/pterodactyl/wings:v1.11.13
+    restart: always
+    networks:
+      - wings
+    ports:
+      - 2022:2022
+      - 443:443
+    tty: true
+    environment:
+      TZ: $TZ
+      WINGS_UID: 988
+      WINGS_GID: 988
+      WINGS_USERNAME: ${WINGS_USERNAME:-pterodactyl}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/containers/:/var/lib/docker/containers/
+      - config:/etc/pterodactyl/  #config file from Panel
+      - /var/lib/pterodactyl/:/var/lib/pterodactyl/ #game server files
+      - /var/log/pterodactyl/:/var/log/pterodactyl/ #Allows Crowdsec to read logs
+      - /tmp/pterodactyl/:/tmp/pterodactyl/
+      - /srv/daemon-data/:/srv/daemon-data/
+
+  db:
+    image: mariadb:11.7
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    networks:
+      wings:
+      pterodactyl_nw:
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=servers
+      - MYSQL_USER=${SQL_USERNAME:-pterodactyl}
+      - MYSQL_PASSWORD=$SQL_PASS
+      - MYSQL_ROOT_PASSWORD=$SQL_PASS_ROOT
+
+networks:
+  wings:
+    name: wings
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: wings
+  pterodactyl_nw:
+    external: true
+
+
+volumes:
+  config: 
+  lib:
+  daemon:
+  db:
+
