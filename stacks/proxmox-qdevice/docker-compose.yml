@@ -7,25 +7,25 @@ services:
       - "22:22"
       - "5403:5403"
     volumes:
-      - /run/sshd
+      - /run/sshd:/run/sshd
       - proxmox-qdevice_data:/etc/corosync
     restart: unless-stopped
-    hostname: ${HOSTNAME:?}
+    hostname: ${HOSTNAME}
     networks: 
       vlan:
-        ipv4_address: ${STATIC_IP:?}
+        ipv4_address: ${STATIC_IP}
 
 networks:
  vlan:
     driver: macvlan
     driver_opts:
-      parent: ${NETWORK_DEVICE:?}
+      parent: ${NETWORK_DEVICE}
     ipam:
        driver: default
        config:
-        - subnet: ${SUBNET:?}
-          ip_range: "${STATIC_IP:?}/32"
-          gateway: ${GATEWAY:?}
+        - subnet: ${SUBNET}
+          ip_range: "${STATIC_IP}/32"
+          gateway: ${GATEWAY}
 
 volumes:
   proxmox-qdevice_data:
