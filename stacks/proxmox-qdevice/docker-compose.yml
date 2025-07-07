@@ -26,3 +26,6 @@ networks:
         - subnet: ${SUBNET:?}
           ip_range: "${STATIC_IP:?}/32"
           gateway: ${GATEWAY:?}
+
+volumes:
+  proxmox-qdevice_data:
