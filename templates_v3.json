@@ -526,6 +526,45 @@
           "label": "SQL Root Password"
         }
       ]
+    },
+    {
+      "id": 8808,
+      "type": 3,
+      "name": "proxmox-qdevice",
+      "title": "Proxmox QDevice (MMG)",
+      "description": "Proxmox Quorum Device for balancing small cluster/homelab quorum",
+      "note": "Make sure to create vlan macvlan network",
+      "categories": ["Tools", "Proxmox"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "stacks/proxmox-qdevice/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "HOSTNAME",
+          "label": "Hostname"
+        },
+        {
+          "name": "STATIC_IP",
+          "label": "Static IPv4 Address"
+        },
+        {
+          "name": "SUBNET",
+          "label": "Subnet",
+          "default": "192.168.0.0/24"
+        },
+        {
+          "name": "GATEWAY",
+          "label": "Gateway",
+          "default": "192.168.0.1"
+        },
+        {
+          "name": "NETWORK_DEVICE",
+          "label": "Network Device",
+          "default": "eth0"
+        }
+      ]
     }
   ]
 }
