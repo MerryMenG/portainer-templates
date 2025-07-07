@@ -554,6 +554,11 @@
           "label": "Static IPv4 Address"
         },
         {
+          "name": "MAC_ADDRESS",
+          "label": "Set Mac Address",
+          "default": "02:xx:xx:xx:xx:xx"
+        },
+        {
           "name": "SUBNET",
           "label": "Subnet",
           "default": "192.168.0.0/24"
