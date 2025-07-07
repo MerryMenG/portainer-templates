@@ -542,6 +542,10 @@
       },
       "env": [
         {
+          "name": "ROOT_PASS",
+          "label": "Root Password"
+        },
+        {
           "name": "HOSTNAME",
           "label": "Hostname"
         },
