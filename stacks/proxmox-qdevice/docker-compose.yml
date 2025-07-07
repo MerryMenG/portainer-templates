@@ -6,12 +6,14 @@ services:
     ports:
       - "22:22"
       - "5403:5403"
+    environment:
+      - NEW_ROOT_PASSWORD=${ROOT_PASS}
     volumes:
       - /run/sshd:/run/sshd
       - proxmox-qdevice_data:/etc/corosync
     restart: unless-stopped
     hostname: ${HOSTNAME}
-    networks: 
+    networks:
       vlan:
         ipv4_address: ${STATIC_IP}
 
