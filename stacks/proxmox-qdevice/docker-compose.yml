@@ -1,7 +1,7 @@
 services:
   qnetd:
     container_name: proxmox-qdevice
-    image: bcleonard/proxmox-qdevice:v2.0
+    image: bcleonard/proxmox-qdevice:v2.1
     build: .
     ports:
       - "22:22"
@@ -9,7 +9,7 @@ services:
     environment:
       - NEW_ROOT_PASSWORD=${ROOT_PASS}
     volumes:
-      - /run/sshd:/run/sshd
+      - /run/sshd
       - proxmox-qdevice_data:/etc/corosync
     restart: unless-stopped
     hostname: ${HOSTNAME}
