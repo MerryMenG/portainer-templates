@@ -5,6 +5,7 @@ services:
     ports:
       - "22:22"
       - "5403:5403"
+    mac_address: ${MAC_ADDRESS}
     environment:
       - NEW_ROOT_PASSWORD=${ROOT_PASS}
     volumes:
