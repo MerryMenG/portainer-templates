@@ -578,13 +578,15 @@
     {
       "id": 8809,
       "type": 1,
-      "title": "Socket-Proxy (MMG)",
       "name": "socket-proxy",
-      "note": "Don't forget to create the volume directories on the host file system.\u003C/p\u003E\u003Cp\u003Emkdir -p /volume1/docker/socket-proxy/config\u003C/p\u003E",
+      "title": "Socket-Proxy (MMG)",
       "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
+      "note": "Don't forget to create the volume directories on the host file system.\u003C/p\u003E\u003Cp\u003Emkdir -p /volume1/docker/socket-proxy/config\u003C/p\u003E",
+      "categories": ["Docker"],
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/socket-proxy:latest",
+      "restart_policy": "unless-stopped",
       "env": [
         {
           "name": "PUID",
@@ -616,10 +618,8 @@
         {
           "container": "/var/run/docker.sock:ro",
           "bind": "/var/run/docker.sock:ro"
-        },
-      ],
-      "restart_policy": "unless-stopped",
-      "categories": ["Docker"]
+        }
+      ]
     }
   ]
 }
