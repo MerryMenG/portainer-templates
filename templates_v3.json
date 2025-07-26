@@ -616,8 +616,9 @@
           "bind": "/volume1/docker/socket-proxy/config"
         },
         {
-          "container": "/var/run/docker.sock:ro",
-          "bind": "/var/run/docker.sock:ro"
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock",
+          "readonly": true
         }
       ]
     }
