@@ -574,7 +574,53 @@
           "default": "eth0"
         }
       ]
-    }
+    },
+    {
+      "id": 8809,
+      "type": 1,
+      "title": "socket-proxy",
+      "name": "socket-proxy",
+      "note": "Don't forget to create the volume directories on the host file system.\u003C/p\u003E\u003Cp\u003Emkdir -p /volume1/docker/socket-proxy/config\u003C/p\u003E",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/socket-proxy:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/London",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/socket-proxy/config"
+        },
+        {
+          "container": "/var/run/docker.sock:ro",
+          "bind": "/var/run/docker.sock:ro"
+        },
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": ["Docker"]
+    },
   ]
 }
 
