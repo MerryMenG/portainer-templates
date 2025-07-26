@@ -578,7 +578,7 @@
     {
       "id": 8809,
       "type": 1,
-      "title": "socket-proxy",
+      "title": "Socket-Proxy (MMG)",
       "name": "socket-proxy",
       "note": "Don't forget to create the volume directories on the host file system.\u003C/p\u003E\u003Cp\u003Emkdir -p /volume1/docker/socket-proxy/config\u003C/p\u003E",
       "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
