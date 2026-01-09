@@ -646,6 +646,10 @@
           "name": "AUTH_KEY"
         },
         {
+          "name": "HOSTNAME",
+          "label": "Hostname"
+        },
+        {
           "name": "STATIC_IP",
           "label": "Static IPv4 Address"
         },
