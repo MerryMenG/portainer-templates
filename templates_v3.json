@@ -621,9 +621,55 @@
           "readonly": true
         }
       ]
+    },
+    {
+      "id": 8810,
+      "type": 3,
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/tailscale-icon.png",
+      "name": "tailscale",
+      "title": "Tailscale (MMG)",
+      "description": "Connect your devices and users together in your own secure Zero config virtual private network.",
+      "note": "Make sure to create vlan macvlan network",
+      "officialDoc": "https://hub.docker.com/r/tailscale/tailscale",
+      "webpage": "https://tailscale.com/",
+      "categories": ["Other", "VPN"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "stacks/tailscale/docker-compose.yml"
+      },
+      "env": [
+        {
+    			"default": "",
+    			"description": "Get AUTH KEY from your tailscale.com user panel",
+    			"label": "AUTH_KEY",
+    			"name": "AUTH_KEY"
+    		},
+        {
+          "name": "STATIC_IP",
+          "label": "Static IPv4 Address"
+        },
+        {
+          "name": "MAC_ADDRESS",
+          "label": "Set Mac Address",
+          "default": "02:xx:xx:xx:xx:xx"
+        },
+        {
+          "name": "SUBNET",
+          "label": "Subnet",
+          "default": "192.168.0.0/24"
+        },
+        {
+          "name": "GATEWAY",
+          "label": "Gateway",
+          "default": "192.168.0.1"
+        },
+        {
+          "name": "NETWORK_DEVICE",
+          "label": "Network Device",
+          "default": "eth0"
+        }
+      ]
     }
   ]
 }
-
-
-
