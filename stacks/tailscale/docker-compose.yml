@@ -1,28 +1,24 @@
 ---
 version: "3.7"
 services:
-  tailscale-nginx:
-    image: tailscale/tailscale:latest
-    hostname: tailscale-nginx
+  tailscale:
+    container_name: tailscale
+    image: tailscale/tailscale:stable
+    mac_address: ${MAC_ADDRESS}
     environment:
       - TS_AUTHKEY=tskey-client-notAReal-OAuthClientSecret1Atawk
       - TS_EXTRA_ARGS=--advertise-tags=tag:container
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_USERSPACE=false
     volumes:
-      - ${PWD}/tailscale-nginx/state:/var/lib/tailscale
       - /portainer/Files/AppData/Config/tailscale:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
     devices:
       - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - net_admin
     restart: unless-stopped
-  nginx:
-    image: nginx
-    depends_on:
-      - tailscale-nginx
-    network_mode: service:tailscale-nginx
+    networks:
+      vlan:
+        ipv4_address: ${STATIC_IP}
 
 networks:
  vlan:
