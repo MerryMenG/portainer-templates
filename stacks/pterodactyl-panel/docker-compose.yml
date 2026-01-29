@@ -1,0 +1,91 @@
+services:
+# -- Cloudflare database tunneling example --
+# --     Set up tunneling in zero trust    --
+#  access-db-1:
+#    image: cloudflare/cloudflared:latest
+#    restart: always
+#    networks:
+#      - panel
+#    command: access tcp --hostname $DB_1_HOST --url access-db-1:$DB_1_PORT
+
+  database:
+    image: mariadb:11.8.5
+    restart: always
+    ports:
+      - 127.0.0.1:3306:3306 # bind locally for cloudflare routing only
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db:/var/lib/mysql
+      - dbetc:/etc/mysql
+    networks:
+      - panel
+    environment:
+      - MYSQL_DATABASE=panel
+      - MYSQL_USER=${SQL_USERNAME:-pterodactyl}
+      - MYSQL_PASSWORD=$SQL_PASS
+      - MYSQL_ROOT_PASSWORD=$SQL_PASS_ROOT
+
+  cache:
+    image: redis:alpine3.22
+    networks:
+      - panel
+    restart: always
+    volumes:
+      - cache:/data
+
+  panel:
+    image: ghcr.io/pterodactyl/panel:latest
+    restart: always
+    networks:
+      - panel
+    ports:
+      - 127.0.0.1:80:80 # bind locally for cloudflare routing only
+    #dns:
+    #  - 1.1.1.1
+    links:
+      - database
+      - cache
+    volumes:
+      - env:/app/var
+      - app:/app # allow editing base package with themes/addons etc.
+      #- /var/log/pterodactyl:/app/storage/logs
+    environment:
+      MAIL_FROM: $MAIL_FROM
+      MAIL_DRIVER: "smtp"
+      MAIL_HOST: $MAIL_SERVER
+      MAIL_PORT: $MAIL_PORT
+      MAIL_USERNAME: $MAIL_USERNAME
+      MAIL_PASSWORD: $MAIL_PASS
+      MAIL_ENCRYPTION: "true"
+      APP_URL: $PTERO_PANEL_URL
+      APP_TIMEZONE: $TZ
+      APP_SERVICE_AUTHOR: $MAIL_FROM
+      TRUSTED_PROXIES: "*" 
+      DB_PASSWORD: $MYSQL_PASS
+      APP_ENV: "production"
+      APP_ENVIRONMENT_ONLY: "false"
+      CACHE_DRIVER: "redis"
+      SESSION_DRIVER: "redis"
+      QUEUE_DRIVER: "redis"
+      REDIS_HOST: "cache"
+      DB_HOST: "database"
+      DB_PORT: "3306"
+      HASHIDS_SALT: $HASHIDS_SALT
+      HASHIDS_LENGTH: $HASHIDS_LENGTH
+      PTERODACTYL_TELEMETRY_ENABLED: false
+    healthcheck:
+      test: curl --connect-timeout 15 --silent --show-error --fail $HEALTHCHECK
+      interval: 1m
+      timeout: 30s
+      retries: 3
+      start_period: 30s
+
+networks:
+  panel:
+
+volumes:
+  cache:
+  db:
+  env:
+  dbetc:
+  app:
