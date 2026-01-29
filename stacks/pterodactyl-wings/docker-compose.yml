@@ -5,8 +5,8 @@ services:
     networks:
       - wings
     ports:
-      - 2022:2022
-      - 443:443
+      - $PORT_SFTP:$PORT_SFTP
+      - $PORT_WEB:$PORT_WEB
     tty: true
     environment:
       TZ: $TZ
@@ -28,7 +28,7 @@ services:
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     ports:
-      - 3306:3306
+      - $SQL_PORT:$SQL_PORT
     networks:
       wings:
       pterodactyl_nw: {}
