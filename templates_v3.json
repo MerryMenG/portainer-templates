@@ -718,11 +718,11 @@
         },
         {
           "name": "MAIL_FROM",
-          "label": "Email 'From' Address"
+          "label": "Email From Address"
         },
         {
           "name": "MAIL_SERVER",
-          "label": "Email Host Server"
+          "label": "Email Host Server",
           "default": "smtp.gmail.com"
         },
         {
