@@ -526,7 +526,7 @@
           "name": "SQL_PORT",
           "label": "SQL Port",
           "default": "3306"
-        }
+        },
         {
           "name": "SQL_USERNAME",
           "label": "SQL Username",
