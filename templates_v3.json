@@ -513,6 +513,21 @@
           "default": "pterodactyl"
         },
         {
+          "name": "PORT_WEB",
+          "label": "Web Port",
+          "default": "443"
+        },
+        {
+          "name": "PORT_SFTP",
+          "label": "SFTP Port",
+          "default": "2022"
+        },
+        {
+          "name": "SQL_PORT",
+          "label": "SQL Port",
+          "default": "3306"
+        }
+        {
           "name": "SQL_USERNAME",
           "label": "SQL Username",
           "default": "pterodactyl"
