@@ -674,6 +674,84 @@
           "default": "eth0"
         }
       ]
+    },
+    {
+      "id": 8811,
+      "type": 3,
+      "name": "pterodactyl-panel",
+      "title": "Pterodactyl Panel (MMG)",
+      "description": "Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.",
+      "note": "Make sure to use multiple compose files using the example if using database tunneling",
+      "categories": ["Docker", "Games"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MerryMenG/portainer-templates",
+        "stackfile": "stacks/pterodactyl-panel/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PTERO_PANEL_URL",
+          "label": "Web App URL"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone",
+          "default": "Europe/London"
+        },
+        {
+          "name": "WINGS_USERNAME",
+          "label": "Wings Username",
+          "default": "pterodactyl"
+        },
+        {
+          "name": "SQL_USERNAME",
+          "label": "SQL Username",
+          "default": "pterodactyl"
+        },
+        {
+          "name": "SQL_PASS",
+          "label": "SQL Password"
+        },
+        {
+          "name": "SQL_PASS_ROOT",
+          "label": "SQL Root Password"
+        },
+        {
+          "name": "MAIL_FROM",
+          "label": "Email 'From' Address"
+        },
+        {
+          "name": "MAIL_SERVER",
+          "label": "Email Host Server"
+          "default": "smtp.gmail.com"
+        },
+        {
+          "name": "MAIL_PORT",
+          "label": "Email Port",
+          "default": "587"
+        },
+        {
+          "name": "MAIL_USERNAME",
+          "label": "Email Username"
+        },
+        {
+          "name": "MAIL_PASS",
+          "label": "Email Password"
+        },
+        {
+          "name": "HASHIDS_SALT",
+          "label": "Hash Salt"
+        },
+        {
+          "name": "HASHIDS_LENGTH",
+          "label": "Hash Length",
+          "default": "8"
+        },
+        {
+          "name": "HEALTHCHECK",
+          "label": "Healthcheck URL:PORT"
+        }
+      ]
     }
   ]
 }
