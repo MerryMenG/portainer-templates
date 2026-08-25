@@ -9,7 +9,7 @@ services:
 #    command: access tcp --hostname $DB_1_HOST --url access-db-1:$DB_1_PORT
 
   database:
-    image: mariadb:11.8.5
+    image: mariadb:11.8.9
     restart: always
     ports:
       - 127.0.0.1:3306:3306 # bind locally for cloudflare routing only
